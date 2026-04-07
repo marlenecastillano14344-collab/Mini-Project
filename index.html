@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>My Personal Profile</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            background-color: #f4f4f4;
+        }
+
+        header {
+            background-color: #333;
+            color: white;
+            padding: 15px;
+            text-align: center;
+        }
+
+        nav {
+            background: #555;
+            padding: 10px;
+            text-align: center;
+        }
+
+        nav a {
+            color: white;
+            margin: 0 15px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            color: yellow;
+        }
+
+        section {
+            padding: 20px;
+            margin: 10px;
+            background: white;
+            border-radius: 10px;
+        }
+
+        img {
+            width: 150px;
+            border-radius: 50%;
+            display: block;
+            margin: auto;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        table, th, td {
+            border: 1px solid black;
+        }
+
+        th, td {
+            padding: 10px;
+            text-align: center;
+        }
+
+        form input, form textarea {
+            width: 100%;
+            padding: 8px;
+            margin: 5px 0;
+        }
+
+        button {
+            padding: 10px;
+            background: #333;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: green;
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <h1>My Personal Profile</h1>
+</header>
+
+<!-- Navigation -->
+<nav>
+    <a href="#profile">Profile</a>
+    <a href="#about">About</a>
+    <a href="#skills">Skills</a>
+    <a href="#contact">Contact</a>
+</nav>
+
+<!-- Profile Section -->
+<section id="profile">
+    <h2>Profile</h2>
+
+    <!-- Clickable Image -->
+    <a href="https://facebook.com" target="_blank">
+        <img src="" alt="My Profile Picture">
+    </a>
+</section>
+
+<!-- About Section -->
+<section id="about">
+    <h2>About Me</h2>
+    <p>
+        Hi! I'm a student who is learning web development. I enjoy creating websites and exploring new technologies.
+    </p>
+</section>
+
+<!-- Skills Table -->
+<section id="skills">
+    <h2>My Skills</h2>
+
+    <table>
+        <tr>
+            <th>Skill</th>
+            <th>Level</th>
+        </tr>
+        <tr>
+            <td>HTML</td>
+            <td>Beginner</td>
+        </tr>
+        <tr>
+            <td>CSS</td>
+            <td>Beginner</td>
+        </tr>
+        <tr>
+            <td>JavaScript</td>
+            <td>Learning</td>
+        </tr>
+    </table>
+</section>
+
+<!-- Contact Form -->
+<section id="contact">
+    <h2>Contact Me</h2>
+
+    <form onsubmit="return validateForm()">
+        <input type="text" id="name" placeholder="Your Name" required>
+        <input type="email" id="email" placeholder="Your Email" required>
+        <textarea id="message" placeholder="Your Message" required></textarea>
+        <button type="submit">Send</button>
+    </form>
+</section>
+
+<script>
+function validateForm() {
+    let name = document.getElementById("name").value;
+    let email = document.getElementById("email").value;
+
+    if (name.length < 3) {
+        alert("Name must be at least 3 characters.");
+        return false;
+    }
+
+    if (!email.includes("@")) {
+        alert("Enter a valid email.");
+        return false;
+    }
+
+    alert("Form submitted successfully!");
+    return true;
+}
+</script>
+
+</body>
+</html>
